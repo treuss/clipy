@@ -13,10 +13,7 @@ __email__ = "thomas@domain.tld"
 __version__ = "0.01"
 __lastupdate__ = "2023-11-14"
 
-"""
-Pattern passt auf sed-typische Scriplets, wie s/alt/neu/ oder auch
-s#/tmp/file1#/tmp/file2#
-"""
+
 
 class CommandParser:
 	
@@ -24,6 +21,9 @@ class CommandParser:
 		SUBSTITUTE = 1
 		DELETE = 2
 
+	"""
+	Pattern passt auf sed-typische Scriplets, wie s/alt/neu/ oder auch s#/tmp/file1#/tmp/file2#
+	"""
 	script_pattern = (
 			r'^(?P<com>[sd])(?P<sep>[\/#~_])'
 			r'(?P<needle>.*)\2(?P<rep>.*)\2(?P<mod>[mgi]*)$'
